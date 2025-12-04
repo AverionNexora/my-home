@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ryuuken - Digital Home</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      background: #0f0f14;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    /* NAVBAR */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 12px 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  gap: 15px; /* Jarak antar tombol */
+}
+
+header button {
+  background: #ffffff10;
+  border: 1px solid #ffffff25;
+  padding: 8px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+  transition: .3s;
+  width: auto;
+}
+
+    header button:hover {
+      background: #ffffff25;
+    }
+
+    /* UMUM */
+    section {
+      padding: 100px 20px 70px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* PROFIL */
+    .profile-container {
+      text-align: center;
+      background: #17171f;
+      padding: 30px;
+      border-radius: 14px;
+      border: 1px solid #ffffff25;
+    }
+
+    .profile-container img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ffffff40;
+    }
+
+    .profile-title {
+      font-size: 26px;
+      margin-top: 10px;
+    }
+
+    .profile-bio {
+      font-size: 15px;
+      opacity: 0.8;
+      margin: 10px 0 20px;
+    }
+
+    .skills {
+  display: flex;
+  flex-direction: column;  /* bikin skill ke bawah */
+  align-items: center;     /* biar tetap center */
+  gap: 10px;               /* jarak antar item */
+}
+
+    .skill-tag {
+      background: #ffffff15;
+      border: 1px solid #ffffff30;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+
+    /* GALERI */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 1px solid #ffffff30;
+      transition: .3s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+      opacity: 0.8;
+    }
+    
+.galeri-audio {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ffffff30;
+  background: #000;
+}
+
+    /* LIGHTBOX */
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 14px;
+      border: 2px solid #ffffff40;
+    }
+
+    #closeLB {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      font-size: 40px;
+      cursor: pointer;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    /* KONTAK */
+    .kontak-box {
+      width: 75%;
+      max-width: 450px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(0,234,255,0.3);
+      box-shadow: 0 0 14px rgba(0,234,255,0.25);
+      text-align: center;
+    }
+
+    .kontak-item {
+      display: block;
+      background: rgba(0,234,255,0.15);
+      padding: 12px;
+      border-radius: 12px;
+      color: white;
+      margin: 10px 0;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 0 10px rgba(0,234,255,0.3);
+      transition: .25s;
+    }
+
+    .kontak-item:hover {
+      background: rgba(0,234,255,0.25);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <button onclick="scrollSmooth('profil')">Profil</button>
+    <button onclick="scrollSmooth('galeri')">Album</button>
+    <button onclick="scrollSmooth('kontak')">Kontak</button>
+  </header>
+
+  <!-- PROFIL -->
+  <section id="profil">
+    <div class="profile-container">
+      <img src="https://raw.githubusercontent.com/AverionNexora/Projek-digital/main/Image/pp.png">
+
+      <h2 class="profile-title">Name: Ryuuken</h2>
+
+      <hr><p class="profile-bio"> 
+        Menjelajah dunia digital sambil menciptakan hal-hal baru dari pikiran—belajar teknologi, membuat proyek, dan mengembangkan kemampuan sebagai developer masa depan.
+      </p><hr>
+      
+      <h2>[SKILL CODING]</h2>
+
+      <div class="skills">
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">JS</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- GALERI -->
+  <section id="galeri">
+    <p style="text-align: center;">Kumpulan visual dan suara yang membentuk dunia digital dystopia</p><h2 style="text-align:center; margin-bottom:25px; color: lightblue;">[ Album & Sound ]</h2>
+
+    <div class="gallery-grid">
+      <img src="https://raw.githubusercontent.com/AverionNexora/Projek-digital/main/Image/dystopia.png" class="galeri-item">
+      <img src="https://raw.githubusercontent.com/AverionNexora/Projek-digital/main/Image/dystopia2.png" class="galeri-item">
+      <img src="https://raw.githubusercontent.com/AverionNexora/Projek-digital/main/Image/dystopia3.png" class="galeri-item">
+      <img src="https://raw.githubusercontent.com/AverionNexora/Projek-digital/main/Image/dystopia4.png" class="galeri-item">
+
+<!-- AUDIO -->
+<audio class="galeri-audio" controls>
+  <source src="https://raw.githubusercontent.com/AverionNexora/Projek-digital/main/Audio/fainted.mp3" type="audio/mpeg">
+  Browser kamu tidak mendukung audio.
+</audio>
+
+<audio class="galeri-audio" controls>
+  <source src="https://raw.githubusercontent.com/AverionNexora/Projek-digital/main/Audio/MemoryRebort.mp3" type="audio/mpeg">
+</audio>
+
+<audio class="galeri-audio" controls>
+  <source src="https://raw.githubusercontent.com/AverionNexora/Projek-digital/main/Audio/starly.mp3" type="audio/mpeg">
+</audio>
+
+<audio class="galeri-audio" controls>
+  <source src="https://raw.githubusercontent.com/AverionNexora/Projek-digital/main/Audio/cyber.mp3" type="audio/mpeg">
+</audio>
+  </section>
+  
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox">
+    <span id="closeLB">&times;</span>
+    <img id="lightbox-img">
+  </div>
+
+  <!-- KONTAK -->
+  <section id="kontak">
+    <p style="text-align: center;">Dunia digital itu luas, tapi kamu bisa mulai dari beberapa pintu berikut</p><h2 style="text-align:center; margin-bottom:25px; color:#00eaff;">[ Media Sosial ]</h2>
+
+    <div class="kontak-box">
+      <p></p>
+
+      <a href="https://wa.me/+6281545422006" class="kontak-item">W.A</a>
+      <a href="#" class="kontak-item">T.T</a>
+      <a href="#" class="kontak-item">Y.T</a>
+      <a href="#" class="kontak-item">S.T.S</a>
+    </div>
+  </section>
+
+  <!-- SCRIPT -->
+  <script>
+    /* Smooth Scroll */
+    function scrollSmooth(id) {
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    }
+
+    /* Lightbox */
+    const items = document.querySelectorAll(".galeri-item");
+    const lightbox = document.getElementById("lightbox");
+    const lightImg = document.getElementById("lightbox-img");
+    const closeLB = document.getElementById("closeLB");
+
+    items.forEach(img => {
+      img.addEventListener("click", () => {
+        lightImg.src = img.src;
+        lightbox.style.display = "flex";
+      });
+    });
+
+    closeLB.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>
